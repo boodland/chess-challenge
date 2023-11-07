@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BoardCell > should display blocked cell when is blocked 1`] = `
+<div>
+  <button
+    class="_cell_436b5f _dark_436b5f _blocked_436b5f "
+  />
+</div>
+`;
+
+exports[`BoardCell > should display dark cell when type is dark 1`] = `
+<div>
+  <button
+    class="_cell_436b5f _dark_436b5f  "
+  />
+</div>
+`;
+
+exports[`BoardCell > should display light cell when type is light 1`] = `
+<div>
+  <button
+    class="_cell_436b5f _light_436b5f  "
+  />
+</div>
+`;
+
+exports[`BoardCell > should display selected cell when is selected 1`] = `
+<div>
+  <button
+    class="_cell_436b5f _dark_436b5f  _selected_436b5f"
+  />
+</div>
+`;
