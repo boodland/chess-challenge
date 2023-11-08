@@ -2,16 +2,19 @@ import { fireEvent, render } from '@testing-library/react';
 
 import GameActions from './game-actions';
 
-const { INITIAL_FEN, FEN_FROM_CONTEXT, updateFenMocked } = vi.hoisted(() => {
+const ERROR_MESSAGE = 'The entered FEN string is not valid';
+
+const { INITIAL_FEN, FEN_FROM_CONTEXT, updateFenMocked, isFenValidMocked } = vi.hoisted(() => {
   return {
     INITIAL_FEN: 'The Initial fen',
     FEN_FROM_CONTEXT: 'The context fen',
     updateFenMocked: vi.fn(),
+    isFenValidMocked: vi.fn().mockImplementation(() => true),
   };
 });
 
 vi.mock('./utils', () => {
-  return { INITIAL_FEN };
+  return { INITIAL_FEN, isFenValid: isFenValidMocked };
 });
 
 vi.mock('react', async (importActual) => {
@@ -32,8 +35,14 @@ describe('GameActions', () => {
   });
 
   it('should have the correct styles', () => {
-    const { container } = render(<GameActions />);
+    const { container, rerender, getByText } = render(<GameActions />);
     expect(container).toMatchSnapshot();
+    isFenValidMocked.mockImplementation(() => false);
+    rerender(<GameActions/>)
+    const button = getByText('Apply');
+    fireEvent.click(button);
+    expect(container).toMatchSnapshot();
+    isFenValidMocked.mockImplementation(() => true);
   });
 
   it('should display fen from context in input', () => {
@@ -61,5 +70,14 @@ describe('GameActions', () => {
     fireEvent.click(button);
     expect(updateFenMocked).toHaveBeenCalledOnce();
     expect(updateFenMocked).toHaveBeenCalledWith(newFenValue);
+    expect(() => getByText(ERROR_MESSAGE)).toThrow();
+  });
+
+  it('should display error message if fen is invalid when clicking Apply button', () => {
+    isFenValidMocked.mockImplementation(() => false);
+    const { getByText } = render(<GameActions />);
+    const button = getByText('Apply');
+    fireEvent.click(button);
+    expect(getByText(ERROR_MESSAGE)).toBeTruthy();
   });
 });

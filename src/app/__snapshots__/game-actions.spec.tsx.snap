@@ -32,3 +32,41 @@ exports[`GameActions > should have the correct styles 1`] = `
   </div>
 </div>
 `;
+
+exports[`GameActions > should have the correct styles 2`] = `
+<div>
+  <div
+    class="_actions_b017e8"
+  >
+    <div>
+      <button>
+        Restart
+      </button>
+    </div>
+    <div>
+      <label
+        for="fen"
+      >
+        Current FEN
+      </label>
+      <div
+        class="_input-container_b017e8"
+      >
+        <textarea
+          id="fen"
+        >
+          The context fen
+        </textarea>
+        <button>
+          Apply
+        </button>
+      </div>
+      <div
+        class="_error-container_b017e8"
+      >
+        The entered FEN string is not valid
+      </div>
+    </div>
+  </div>
+</div>
+`;
