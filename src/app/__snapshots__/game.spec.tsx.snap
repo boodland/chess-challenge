@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game > should have the correct styles 1`] = `
+<div>
+  <div>
+    <div>
+      MockedGameProvider
+    </div>
+    <div>
+      <div
+        class="_game_b500ea"
+      >
+        <div>
+          <div>
+            MockedBoard
+          </div>
+        </div>
+        <div
+          class="_right-panel_b500ea"
+        >
+          <div>
+            MockedGameActions
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

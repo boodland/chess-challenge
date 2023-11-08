@@ -1,0 +1,11 @@
+.game {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.right-panel {
+    flex-grow: 2;
+    flex-shrink: 2;
+    margin-left: 50px;
+}
