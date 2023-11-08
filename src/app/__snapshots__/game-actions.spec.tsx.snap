@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameActions > should have the correct styles 1`] = `
+<div>
+  <div
+    class="_actions_b017e8"
+  >
+    <div>
+      <button>
+        Restart
+      </button>
+    </div>
+    <div>
+      <label
+        for="fen"
+      >
+        Current FEN
+      </label>
+      <div
+        class="_input-container_b017e8"
+      >
+        <input
+          id="fen"
+          type="text"
+          value="The context fen"
+        />
+        <button>
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
