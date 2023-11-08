@@ -40,27 +40,6 @@ describe('useGame', () => {
         });
     });
 
-    describe('updatePositions should', () => {
-        afterEach(() => localStorage.clear());
-        it('update positions and fen', () => {
-            const { result } = renderHook(useGame);
-            expect(result.current.positions).toEqual(INITIAL_POSITIONS);
-            act(() => result.current.updatePositions(UPDATED_POSITIONS));
-            expect(result.current.positions).toEqual(UPDATED_POSITIONS);
-            expect(result.current.fen).toBe(UPDATED_FEN);
-        });
-        it('store fen locally', () => {
-            const { result, rerender } = renderHook(useGame);
-            expect(result.current.positions).toEqual(INITIAL_POSITIONS);
-            act(() => result.current.updatePositions(UPDATED_POSITIONS));
-            expect(result.current.positions).toEqual(UPDATED_POSITIONS);
-            expect(result.current.fen).toBe(UPDATED_FEN);
-            rerender();
-            expect(result.current.fen).toBe(UPDATED_FEN);
-            expect(result.current.positions).toEqual(UPDATED_POSITIONS);
-        });
-    });
-
     describe('onClickPosition should', () => {
         it('not update selectedPosition if position is empty and selectedPosition is undefined', () => {
             const { result } = renderHook(useGame);

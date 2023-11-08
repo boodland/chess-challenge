@@ -6,13 +6,11 @@ const useGameValue = {
   fen: 'The fen string',
   positions: 'The positions value',
   selectedPosition: 'The selected position',
-  updateFen: vi.fn().mockName('updateFen'),
-  updatePositions: vi.fn().mockName('updatePositions'),
-  onClickPosition: vi.fn().mockName('onClickPosition'),
+  updateFen: vi.fn(),
+  onClickPosition: vi.fn(),
 };
 
 const updateFenParam = 'New FEN';
-const updatePositionsParam = [''];
 const onClickPositionParam = 0;
 
 vi.mock('./hooks', () => {
@@ -25,12 +23,10 @@ const TestingComponent = () => {
     positions,
     selectedPosition,
     updateFen,
-    updatePositions,
     onClickPosition,
   } = useContext(GameContext);
 
   updateFen(updateFenParam);
-  updatePositions(updatePositionsParam);
   onClickPosition(onClickPositionParam);
   return (
     <>
@@ -56,10 +52,6 @@ describe('GameProvider', () => {
     expect(value).toBeTruthy();
     expect(useGameValue.updateFen).toHaveBeenCalledOnce();
     expect(useGameValue.updateFen).toHaveBeenCalledWith(updateFenParam);
-    expect(useGameValue.updatePositions).toHaveBeenCalledOnce();
-    expect(useGameValue.updatePositions).toHaveBeenCalledWith(
-      updatePositionsParam
-    );
     expect(useGameValue.onClickPosition).toHaveBeenCalledOnce();
     expect(useGameValue.onClickPosition).toHaveBeenCalledWith(
       onClickPositionParam

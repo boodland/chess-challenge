@@ -5,7 +5,6 @@ type GameContextType = {
   positions: string[];
   fen: string;
   selectedPosition: number | undefined;
-  updatePositions: (newPositions: string[]) => void;
   updateFen: (newFen: string) => void;
   onClickPosition: (position: number) => void;
 };
@@ -14,7 +13,6 @@ const initialContextValue: GameContextType = {
   positions: [],
   fen: '',
   selectedPosition: undefined,
-  updatePositions: (newPositions) => newPositions,
   updateFen: (newFen) => newFen,
   onClickPosition: (position) => position,
 };

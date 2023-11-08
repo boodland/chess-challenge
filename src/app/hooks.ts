@@ -48,7 +48,7 @@ export function useGame() {
         moveSelectedPositionTo(position, selectedPositionPiece);
     }
 
-    return { positions, fen, selectedPosition, updatePositions, updateFen, onClickPosition };
+    return { positions, fen, selectedPosition, updateFen, onClickPosition };
 }
 
 function hasSelectedPosition(selectedPosition?: number) {
