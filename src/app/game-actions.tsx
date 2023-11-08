@@ -13,7 +13,7 @@ const GameActions = () => {
     setNewFen(fen);
   }, [fen]);
 
-  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setNewFen(event.currentTarget.value);
   };
 
@@ -34,8 +34,7 @@ const GameActions = () => {
       <div>
         <label htmlFor="fen">{INPUT_LABEL}</label>
         <div className={styles['input-container']}>
-          <input
-            type="text"
+          <textarea
             id="fen"
             value={newFen}
             onChange={onChangeHandler}

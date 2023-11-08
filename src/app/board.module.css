@@ -13,3 +13,40 @@
   content: '';
   display: table;
 }
+
+@media (width <= 600px) {
+  .text {
+    height: 49px;
+    width: 49px;
+    padding-top: 10px;
+  }
+
+  .columns {
+    margin-left: 50px;
+  }
+}
+
+@media (width <= 500px) {
+  .text {
+    height: 39px;
+    width: 39px;
+    padding-top: 10px;
+  }
+
+  .columns {
+    margin-left: 40px;
+  }
+}
+
+@media (width <= 400px) {
+  .text {
+    height: 34px;
+    width: 34px;
+    padding-top: 7px;
+    font-size: 15px;
+  }
+
+  .columns {
+    margin-left: 35px;
+  }
+}

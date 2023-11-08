@@ -19,11 +19,11 @@ exports[`GameActions > should have the correct styles 1`] = `
       <div
         class="_input-container_b017e8"
       >
-        <input
+        <textarea
           id="fen"
-          type="text"
-          value="The context fen"
-        />
+        >
+          The context fen
+        </textarea>
         <button>
           Apply
         </button>
