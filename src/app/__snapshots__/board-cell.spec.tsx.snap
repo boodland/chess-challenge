@@ -1,9 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`BoardCell > should display blocked cell when is blocked 1`] = `
+exports[`BoardCell > should display blocked cell when is blocked and disabled 1`] = `
 <div>
   <button
     class="_cell_436b5f _dark_436b5f _blocked_436b5f "
+    disabled=""
   />
 </div>
 `;

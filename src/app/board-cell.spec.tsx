@@ -38,7 +38,7 @@ describe('BoardCell', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should display blocked cell when is blocked', () => {
+  it('should display blocked cell when is blocked and disabled', () => {
     const { container } = render(
       <BoardCell
         piece={EMPTY_PIECE}

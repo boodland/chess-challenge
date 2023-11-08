@@ -19,6 +19,7 @@ const BoardCellMemoized = memo(
     return (
       <button
         className={`${styles['cell']} ${styles[type]} ${blockedClass} ${selectedClass}`}
+        disabled={blocked}
         onClick={onClick}
       >
         {pieceShape}
