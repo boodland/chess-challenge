@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import styles from './game-actions.module.css';
 import { INITIAL_FEN } from './utils';
 import { GameContext } from './game-context';
