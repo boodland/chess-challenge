@@ -74,10 +74,12 @@ describe('GameActions', () => {
   });
 
   it('should display error message if fen is invalid when clicking Apply button', () => {
+    updateFenMocked.mockClear();
     isFenValidMocked.mockImplementation(() => false);
     const { getByText } = render(<GameActions />);
     const button = getByText('Apply');
     fireEvent.click(button);
     expect(getByText(ERROR_MESSAGE)).toBeTruthy();
+    expect(updateFenMocked).not.toHaveBeenCalled();
   });
 });
