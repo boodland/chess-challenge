@@ -49,3 +49,55 @@ export function getFromLocalStorage(): string {
 export function saveToLocalStorage(fen: string) {
     localStorage.setItem(LOCAL_STORAGE_KEY, fen);
 }
+
+export function isFenValid(fen: string) {
+    let isValid = isFenWellConstructed(fen);
+    isValid = isValid && areNumberOfItemsInSectionsCorrect(fen);
+    isValid = isValid && areNumberOfPiecesCorrect(fen);
+    return isValid;
+}
+
+function isFenWellConstructed(fen: string) {
+    const isValid = /^(?!.*\d{2,}.*)([1-8PNBRQK]+\/){7}[1-8PNBRQK]+$/gim.test(fen);
+    return isValid;
+}
+
+function areNumberOfItemsInSectionsCorrect(fen: string) {
+    const fenSections = fen.split(FEN_ROWS_SEPARATOR);
+    let isValid =  true;
+    fenSections.forEach((section) => {
+        isValid = isValid && isNumberOfItemsInSectionCorrect(section);
+    });
+    return isValid;
+}
+
+function isNumberOfItemsInSectionCorrect(section: string) {
+    const sectionChars = [...section];
+    const total =  sectionChars.reduce((total, char) => {
+        let increment = parseInt(char);
+        if(isNaN(increment)) increment = 1;
+        return total + increment;
+    }, 0);
+    return total === 8;
+}
+
+function areNumberOfPiecesCorrect(fen: string) {
+    const fenChars = [...fen];
+    let isValid = isNumberOfPieceCorrect(fenChars, 'p', 8);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'P', 8);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'r', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'R', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'n', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'N', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'b', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'B', 2);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'k', 1);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'K', 1);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'q', 1);
+    return isValid;
+}
+
+function isNumberOfPieceCorrect(fen: string[], piece: string, maximum: number) {
+    const total = fen.filter((char) => char === piece).length;
+    return total <= maximum;
+}

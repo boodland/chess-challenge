@@ -30,6 +30,12 @@ label {
     display: block;
 }
 
+.error-container {
+    padding-top: 10px;
+    font-size: 16px;
+    color: red;
+}
+
 
 @media (width <=600px) {
     .input-container {
