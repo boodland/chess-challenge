@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BoardRow > should display one BoardCell per column 1`] = `
+<div>
+  <div>
+    MockedBoardCell {"piece":"r","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"n","type":"light","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"b","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+  </div>
+</div>
+`;
+
+exports[`BoardRow > should pass the correct params to BoardCells > when positions are empty and no selectedPosition 1`] = `
+<div>
+  <div>
+    MockedBoardCell {"piece":"r","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"n","type":"light","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"b","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+  </div>
+</div>
+`;
+
+exports[`BoardRow > should pass the correct params to BoardCells > when selectedPosition is set 1`] = `
+<div>
+  <div>
+    MockedBoardCell {"piece":"r","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"n","type":"light","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"b","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+  </div>
+</div>
+`;
+
+exports[`BoardRow > should pass the correct params to BoardCells > when starting a different row 1`] = `
+<div>
+  <div>
+    MockedBoardCell {"piece":"q","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"k","type":"light","blocked":true,"selected":false} onClick: () =&gt; void 0
+    MockedBoardCell {"piece":"b","type":"dark","blocked":true,"selected":false} onClick: () =&gt; void 0
+  </div>
+</div>
+`;
