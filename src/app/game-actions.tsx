@@ -5,7 +5,7 @@ import { GameContext } from './game-context';
 
 const INPUT_LABEL = 'Current FEN';
 
-const GameActionsMemoized = memo(() => {
+const GameActions = () => {
   const { fen, updateFen } = useContext(GameContext);
   const [newFen, setNewFen] = useState(fen);
 
@@ -45,6 +45,6 @@ const GameActionsMemoized = memo(() => {
       </div>
     </div>
   );
-});
+};
 
-export default GameActionsMemoized;
+export default GameActions;
