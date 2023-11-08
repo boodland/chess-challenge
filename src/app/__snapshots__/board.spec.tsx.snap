@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Board > should have the correct styles 1`] = `
+<div>
+  <div>
+    <span
+      class="_text_672456"
+    >
+      5
+    </span>
+    <div>
+      MockedBoardRow {"startPosition":0}
+    </div>
+  </div>
+  <div>
+    <span
+      class="_text_672456"
+    >
+      4
+    </span>
+    <div>
+      MockedBoardRow {"startPosition":1}
+    </div>
+  </div>
+  <div>
+    <span
+      class="_text_672456"
+    >
+      3
+    </span>
+    <div>
+      MockedBoardRow {"startPosition":2}
+    </div>
+  </div>
+  <div>
+    <span
+      class="_text_672456"
+    >
+      2
+    </span>
+    <div>
+      MockedBoardRow {"startPosition":3}
+    </div>
+  </div>
+  <div>
+    <span
+      class="_text_672456"
+    >
+      1
+    </span>
+    <div>
+      MockedBoardRow {"startPosition":4}
+    </div>
+  </div>
+  <div
+    class="_columns_672456"
+  >
+    <span
+      class="_text_672456"
+    >
+      a
+    </span>
+    <span
+      class="_text_672456"
+    >
+      b
+    </span>
+    <span
+      class="_text_672456"
+    >
+      c
+    </span>
+  </div>
+</div>
+`;
