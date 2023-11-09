@@ -93,6 +93,7 @@ function areNumberOfPiecesCorrect(fen: string) {
     isValid = isValid && isNumberOfPieceCorrect(fenChars, 'B', 2);
     isValid = isValid && isNumberOfPieceCorrect(fenChars, 'k', 1);
     isValid = isValid && isNumberOfPieceCorrect(fenChars, 'K', 1);
+    isValid = isValid && isNumberOfPieceCorrect(fenChars, 'Q', 1);
     isValid = isValid && isNumberOfPieceCorrect(fenChars, 'q', 1);
     return isValid;
 }
