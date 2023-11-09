@@ -40,7 +40,7 @@ To install the dependencies execute the command `npm install` within the root fo
 
 ## Start the app
 
-To start the app locally execute the command `npm run start`. Open your browser and navigate to http://localhost:4200/. Happy game!
+To start the app locally execute the command `npm run start`. Open your browser and navigate to http://localhost:4200/.
 
 
 ## Run the tests
@@ -51,3 +51,7 @@ To run the tests execute the command `npm run test`.
 ## Build the app
 
 To build the app execute the command `npm run build`.
+
+## Use the app
+
+The app has been deployed using [netlify](https://www.netlify.com/) and is available [here](https://alberto-arias-chess-challenge.netlify.app/). Happy game!
